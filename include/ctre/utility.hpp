@@ -30,4 +30,10 @@
 #define CTRE_FLATTEN __attribute__((flatten))
 #endif
 
+#if defined(_MSC_VER) && (_MSC_VER < 1920)
+#define MSVC_NAMESPACE_WORKAROUND ::ctre::
+#else
+#define MSVC_NAMESPACE_WORKAROUND
+#endif
+
 #endif

@@ -402,7 +402,7 @@ template <size_t Id, typename Iterator, typename... Captures> constexpr auto get
 
 template <typename Iterator, typename... Captures> regex_results(Iterator, ctll::list<Captures...>) -> regex_results<Iterator, Captures...>;
 
-template <typename ResultIterator, typename Pattern> using return_type = decltype(regex_results(std::declval<ResultIterator>(), ::ctre::find_captures(Pattern{})));
+template <typename ResultIterator, typename Pattern> using return_type = decltype(regex_results(std::declval<ResultIterator>(), MSVC_NAMESPACE_WORKAROUND find_captures(Pattern{})));
 
 }
 
